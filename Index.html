@@ -1,9 +1,10 @@
+cat > index.html <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RAFAEL TV PANEL - Akatsuki Clan</title>
+    <title> RAFAEL TV PANEL - Akatsuki Clan</title>
     <style>
         :root {
             --bg-main: #0b0404;
@@ -29,7 +30,12 @@
             --font-size-xl: clamp(28px, 8vw, 42px);
         }
 
-        * {margin: 0; padding: 0; box-sizing: border-box;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background: linear-gradient(180deg, #050202 0%, #120404 100%);
             color: var(--text);
@@ -80,8 +86,10 @@
 
         #loading-screen {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -93,7 +101,10 @@
             transition: opacity 0.5s ease;
         }
 
-        #loading-screen.hidden { opacity: 0; pointer-events: none; }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
 
         .loading-digits {
             font-size: clamp(40px, 12vw, 60px);
@@ -110,7 +121,10 @@
             transform: scale(1.15);
         }
 
-        .loading-digits span.inactive { opacity: 0.15; transform: scale(0.9); }
+        .loading-digits span.inactive {
+            opacity: 0.15;
+            transform: scale(0.9);
+        }
 
         .loading-subtitle {
             margin-top: 28px;
@@ -121,6 +135,7 @@
             animation: fadeInUp 0.8s ease 0.5s forwards;
         }
 
+        /* --- BOX STYLING --- */
         .section {
             background: linear-gradient(160deg, #140404, #1a0606);
             border: 2px solid var(--border);
@@ -182,7 +197,11 @@
             min-height: 54px;
         }
 
-        .btn:hover { border-color: var(--accent); background: rgba(230, 36, 41, 0.15); }
+        .btn:hover {
+            border-color: var(--accent);
+            background: rgba(230, 36, 41, 0.15);
+        }
+
         .btn.active {
             border-color: var(--accent);
             background: rgba(230, 36, 41, 0.25);
@@ -257,7 +276,10 @@
             opacity: 0.9;
         }
 
-        .config-wrapper { position: relative; }
+        .config-wrapper {
+            position: relative;
+        }
+
         .config-display {
             background: var(--surface-dark);
             border: 1px solid var(--border);
@@ -292,7 +314,11 @@
             transition: all 0.2s ease;
         }
 
-        .copy-btn:hover { border-color: var(--accent); background: rgba(230, 36, 41, 0.25); }
+        .copy-btn:hover {
+            border-color: var(--accent);
+            background: rgba(230, 36, 41, 0.25);
+        }
+
         .status-dot {
             display: inline-block;
             width: 10px;
@@ -300,6 +326,7 @@
             border-radius: 50%;
             margin-right: 8px;
         }
+
         .status-dot.green { background: var(--green); box-shadow: 0 0 8px var(--green); }
         .status-dot.yellow { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); animation: pulse 1.2s infinite; }
         @keyframes pulse { 0%,100% {opacity:1;} 50% {opacity:0.5;} }
@@ -362,6 +389,7 @@
 </div>
 
 <div class="container" id="main-content" style="display:none;">
+    <!-- HEADER INFO -->
     <div class="section fade-in">
         <div class="section-title glow-text" style="font-size:var(--font-size-xl); letter-spacing:4px; color:var(--accent);">RAFAELTV PANEL</div>
         <div class="section-subtitle">AKATSUKI EDITION • LIBRENG INTERNET</div>
@@ -372,6 +400,7 @@
         <div class="info-row"><span class="info-label">UPTIME:</span><span class="info-value" id="runtime-display">00:00:00</span></div>
     </div>
 
+    <!-- ✅ INILIPAT SA TAAS: ADDRESS AT SNI -->
     <div class="section fade-in">
         <div class="section-title">ADDRESS SELECTOR</div>
         <div class="dropdown-wrapper">
@@ -393,6 +422,7 @@
         </div>
     </div>
 
+    <!-- IBA PANG SECTION -->
     <div class="section fade-in">
         <div class="section-title">REAL-TIME MONITOR</div>
         <div class="speed-row">
@@ -721,3 +751,4 @@
 
 </body>
 </html>
+EOF
